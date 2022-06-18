@@ -8,6 +8,14 @@ body{
     margin: 15px;
 }
 
+#cards-flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
 .card {
     width: 32%;
     padding: 10px;
@@ -17,7 +25,7 @@ body{
 
 @media (max-width: 1000px){
     .card {
-        width: 50%;
+        width: 45%;
     }
 }
 
