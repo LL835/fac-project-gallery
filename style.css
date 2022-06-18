@@ -5,7 +5,11 @@
 
 body{
     background: #F0E5CF;
+}
+
+.page-header{
     margin: 15px;
+    color: #444444;
 }
 
 #cards-flex-container {
@@ -31,7 +35,7 @@ body{
     }
 }
 
-@media (max-width: 550px){
+@media (max-width: 600px){
     .card {
         width: 100%;
     }
