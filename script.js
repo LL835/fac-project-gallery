@@ -1,71 +1,57 @@
-const descriptionButtons = document.querySelectorAll(".toggle")
-const calcReadMore = document.querySelector("#calculator-read-more");
-const calcReadLess = document.querySelector("#calculator-read-less");
-const calcDescription = document.querySelector("#calculator-description");
+const toggleDescriptionButtons = document.querySelectorAll(".toggle");
 
-const tribPageReadMore = document.querySelector("#tp-read-more");
-const tribPageReadLess = document.querySelector("#tp-read-less");
-const tribPageDescription = document.querySelector("#tp-description");
+const calcButton = document.querySelector("#calc-button");
+const calcDescription = document.querySelector("#calc-description");
 
-const easReadMore = document.querySelector("#eas-read-more");
-const easReadLess = document.querySelector("#eas-read-less");
+const tpButton = document.querySelector("#tp-button");
+const tpDescription = document.querySelector("#tp-description");
+
+const easButton = document.querySelector("#eas-button");
 const easDescription = document.querySelector("#eas-description");
 
-const nacReadMore = document.querySelector("#nac-read-more");
-const nacReadLess = document.querySelector("#nac-read-less");
+const nacButton = document.querySelector("#nac-button");
 const nacDescription = document.querySelector("#nac-description");
 
-const rpsReadMore = document.querySelector("#rps-read-more");
-const rpsReadLess = document.querySelector("#rps-read-less");
+const rpsButton = document.querySelector("#rps-button");
 const rpsDescription = document.querySelector("#rps-description");
 
-const lpReadMore = document.querySelector("#lp-read-more");
-const lpReadLess = document.querySelector("#lp-read-less");
+const lpButton = document.querySelector("#lp-button");
 const lpDescription = document.querySelector("#lp-description");
 
-
-function toggleDescription(buttonName){
-    switch(buttonName){
-        case "calculator-read-more": 
-        case "calculator-read-less":
-            showHideElements(calcReadMore, calcReadLess, calcDescription);
+function toggleDescription(button){
+    switch(button){
+        case "calc-button": 
+            showHideElements(calcButton, calcDescription);
             break;
-        case "tp-read-more":
-        case "tp-read-less":
-            showHideElements(tribPageReadMore, tribPageReadLess, tribPageDescription);
+        case "tp-button":
+            showHideElements(tpButton, tpDescription);
             break;
-        case "eas-read-more":
-        case "eas-read-less":
-            showHideElements(easReadMore, easReadLess, easDescription);
+        case "eas-button":
+            showHideElements(easButton, easDescription);
             break;
-        case "nac-read-more":
-        case "nac-read-less":
-            showHideElements(nacReadMore, nacReadLess, nacDescription);
+        case "nac-button":
+            showHideElements(nacButton, nacDescription);
             break;
-        case "rps-read-more":
-        case "rps-read-less":
-            showHideElements(rpsReadMore, rpsReadLess, rpsDescription);
+        case "rps-button":
+            showHideElements(rpsButton, rpsDescription);
             break;
-        case "lp-read-more":
-        case "lp-read-less":
-            showHideElements(lpReadMore, lpReadLess, lpDescription);
+        case "lp-button":
+            showHideElements(lpButton, lpDescription);
             break;
     } 
 }
 
-function showHideElements(readMoreButton, readLessButton, descriptionText){
-    if (readMoreButton.style.display === "block" || readMoreButton.style.display === ""){
-        readMoreButton.style.display = "none";
-        descriptionText.style.display = "block"; 
-        readLessButton.style.display = "block";
-        readLessButton.scrollIntoView(false)
+function showHideElements(button, description){
+    description.classList.toggle("hidden");
+    description.scrollIntoView(true)
+    if (button.textContent === "Read more"){
+        button.textContent = "Read less"
     } else {
-        readMoreButton.style.display = "block";
-        descriptionText.style.display = "none"; 
-        readLessButton.style.display = "none";
+        button.textContent = "Read more"
     }
 }
 
-descriptionButtons.forEach(button => button.addEventListener("click", () => {
+
+toggleDescriptionButtons.forEach(button => button.addEventListener("click", () => {
     toggleDescription(button.id)
 }))

@@ -5,10 +5,11 @@
 
 body{
     background: #F0E5CF;
+    margin: 15px;
+
 }
 
 .page-header{
-    margin: 15px;
     color: #444444;
 }
 
@@ -17,8 +18,7 @@ body{
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 15px;
-    
+    gap: 15px;    
 }
 
 .card {
@@ -66,7 +66,11 @@ body{
 
 .text{
     font-size: 1.2rem;
-    color: #7F7C82
+    color: #7F7C82;
+}
+
+.hidden {
+    display: none /* Elements with this class are hidden  */
 }
 
 .toggle{
