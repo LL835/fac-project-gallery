@@ -43,7 +43,7 @@ function toggleDescription(button){
 
 function showHideElements(button, description){
     description.classList.toggle("hidden");
-    description.scrollIntoView(true)
+    description.parentNode.parentNode.scrollIntoView(true) // scroll on click to the card
     if (button.textContent === "Read more"){
         button.textContent = "Read less"
     } else {
