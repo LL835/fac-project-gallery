@@ -18,8 +18,15 @@ const rpsDescription = document.querySelector("#rps-description");
 const lpButton = document.querySelector("#lp-button");
 const lpDescription = document.querySelector("#lp-description");
 
+const cbButton = document.querySelector("#cb-button");
+const cbDescription = document.querySelector("#cb-description");
+
+
 function toggleDescription(button){
     switch(button){
+        case "cb-button":
+            showHideElements(cbButton, cbDescription);
+            break
         case "calc-button": 
             showHideElements(calcButton, calcDescription);
             break;
@@ -43,7 +50,6 @@ function toggleDescription(button){
 
 function showHideElements(button, description){
     description.classList.toggle("hidden");
-    description.parentNode.parentNode.scrollIntoView(true) // scroll on click to the card
     if (button.textContent === "Read more"){
         button.textContent = "Read less"
     } else {
