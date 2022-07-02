@@ -21,12 +21,18 @@ const lpDescription = document.querySelector("#lp-description");
 const cbButton = document.querySelector("#cb-button");
 const cbDescription = document.querySelector("#cb-description");
 
+const fsButton = document.querySelector("#fs-button");
+const fsDescription = document.querySelector("#fs-description");
+
 
 function toggleDescription(button){
     switch(button){
+        case "fs-button":
+            showHideElements(fsButton, fsDescription);
+            break;
         case "cb-button":
             showHideElements(cbButton, cbDescription);
-            break
+            break;
         case "calc-button": 
             showHideElements(calcButton, calcDescription);
             break;
