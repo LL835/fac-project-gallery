@@ -24,9 +24,15 @@ const cbDescription = document.querySelector("#cb-description");
 const fsButton = document.querySelector("#fs-button");
 const fsDescription = document.querySelector("#fs-description");
 
+const cpsButton = document.querySelector("#cps-button");
+const cpsDescription = document.querySelector("#cps-description");
+
 
 function toggleDescription(button){
     switch(button){
+        case "cps-button":
+            showHideElements(cpsButton, cpsDescription);
+            break;
         case "fs-button":
             showHideElements(fsButton, fsDescription);
             break;
